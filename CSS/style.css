@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'get_schwiftyregular';
+    src: url('fonts/get_schwifty-webfont.woff2') format('woff2'),
+         url('fonts/get_schwifty-webfont.woff') format('woff'),
+         url('fonts/get_schwifty.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: blue;
+}
+
+h1{
+    font-family: 'get_schwiftyregular', serif;
+    color: crimson;
+}
