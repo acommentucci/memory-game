@@ -6,6 +6,7 @@
     font-weight: normal;
     font-style: normal;
 }
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 * {
     padding: 0;
@@ -15,10 +16,39 @@
 
 body {
     height: 100vh;
-    background-color: blue;
+    background-image: url("../assets/img/background_image_desktop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'get_schwiftyregular', serif;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
 }
 
+.title-container{
+    text-align: center;
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+}
 h1{
-    font-family: 'get_schwiftyregular', serif;
-    color: crimson;
+    color: #488EB6;
+    font-size: 5.5rem;
+}
+h2{
+    color: #171636;
+    font-size: 3rem;
+}
+
+.button-container{
+    position: absolute;
+    bottom: 10rem;
+}
+
+.button-container button{
+    margin: 0 50px 0 50px;
+    font-size: 2.5rem;
+    padding: 5px;
 }
