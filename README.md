@@ -57,6 +57,7 @@ The colors chosen for the project were selected from the cover image of the seri
 From [Free fonts vault](https://freefontsvault.com/) I was able to download the typical font from the series "Get Schwifty Font" and use it in my project along with the more user friendly "Roboto".
 
 # Features
+Background image change on table and smaller screen
 ## Features to implement
 # Technologies
 # Testing
