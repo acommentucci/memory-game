@@ -65,6 +65,8 @@ Where to write the cards - One of the first problems I encountered in planning t
 
 How to install a custom font - I've never added a font family to my designs anywhere other than Google's fonts but, for this specific project, I found a free custom font that was Rick and Morty's original graphic design. I found out how to use the "@ font-face" function in CSS. I also used a [webfont-generator](https://www.fontsquirrel.com/tools/webfont-generator) to make the font compatible with various browsers.
 
+Selecting the n child of an element :nth-child()
+
 # Deployment
 # Credits
 All images were taken from [Rick and Morty Fandom website](https://rickandmorty.fandom.com/wiki/Rickipedia), except for the background photo that is from [Wallpaper Cave](https://wallpapercave.com/w/wp5015262)
