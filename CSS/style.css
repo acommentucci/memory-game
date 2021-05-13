@@ -51,7 +51,7 @@ body {
     flex-direction: column;
     align-items: center;
     position: relative;
-
+    background-color: var(--clr-button);
     letter-spacing: 2px;
 }
 
@@ -179,4 +179,19 @@ Leader Board
 
 .board-container li:nth-child(5){
     background-color: #8D55AE;
+}
+
+/*
+=================================
+Leader Board
+=================================
+*/
+
+footer{
+    background-color: var(--clr-primary);
+    height: 60px;
+    width: 100%;
+    position: absolute;
+    bottom: -55%;
+    text-align: center;
 }
