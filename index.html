@@ -9,15 +9,20 @@
     <title>Document</title>
 </head>
 <body>
+    <!--title-->
     <div class="title-container">
         <a href="index.html"><h1>Rick and Morty</h1></a>
         <h2>memory game</h2>
     </div>
+
+    <!--Buttons-->
     <div class="button-container">
         <a id="button-how-to" href="#">How to play</a>
         <a id="button-start" href="#">Start</a>
     </div>
-    <div id="how-to-modal" class="modal">
+
+    <!--"how to play" modal-->
+    <!-- <div id="how-to-modal" class="modal">
         <div class="modal-container">
             <div class="modal-header">
                 <i class="fas fa-times close"></i>
@@ -28,19 +33,55 @@
                     <li>Click on "Start".</li>
                     <li>Select the difficulty level you prefer:
                         <ul>
-                            <li><span>Morty - Easy - 12 cards</span></li>
+                            <li><span>Jerry - Easy - 12 cards</span></li>
                             <li><span>Beth - Medium - 16 cards</span></li>
-                            <li><span>Rick - Hard - 20 cards</span></li>
+                            <li><span>Birdperson - Hard - 20 cards</span></li>
                         </ul>
                         Only hard level scores will be considered for the leader board.
                     </li>
                     <li>When all pairs of cards are resolved, the game ends.</li>
                     <li>If your time is among the best you will be asked to write your name to enter the ranking.</li>
                     <p><span>Warning: It is not advisable to travel through dimensions to restart the game.</span></p>
-                </ol>
+                </ul>
+            </div>
+        </div>
+    </div> -->
+
+    <!--"start" modal-->
+    <div id="start-modal" class="modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <i class="fas fa-times close"></i>
+                <h3>Select your level</h3>
+                <div class="card">
+                    <img src="/assets/img/Cards/Jerry_Smith.jpg" alt="Jerry Smith" style="width:100%">
+                    <div class="container">
+                        <h4><b>Jerry</b></h4>
+                        <p>Easy</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/assets/img/Cards/Beth_Smith.jpg" alt="Beth Smith" style="width:100%">
+                    <div class="container">
+                        <h4><b>Beth</b></h4>
+                        <p>Medium</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/assets/img/Cards/Birdperson.jpg" alt="Birdperson" style="width:100%">
+                    <div class="container">
+                        <h4><b>Birdperson</b></h4>
+                        <p>Hard</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+
             </div>
         </div>
     </div>
+
+    <!--Leader Board-->
     <div class="board-container">
 	    <div class="leaderboard">
 		    <div class="head">
@@ -73,6 +114,8 @@
 		    </div>
         </div>
 	</div>
+
+    <!--Footer-->
     <footer>
         <p>Author: Alessandro Commentucci</p>
         <p>For education purpose only - 2021</p>
