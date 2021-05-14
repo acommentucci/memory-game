@@ -239,6 +239,10 @@ Modal
     from {top:-300px; opacity:0}
     to {top:0; opacity:1}
   }
+
+#start-modal{
+    width: 50%;
+}
 /* The Close Button */
 .close {
     color: white;
@@ -282,20 +286,37 @@ Modal
 
 .card {
     /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 20%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
     transition: 0.3s;
-  }
-  
-  /* On mouse-over, add a deeper shadow */
-  .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-  
-  /* Add some padding inside the card container */
-  .container {
-    padding: 2px 16px;
-  }
+    border-radius: 5px;
+    margin: 20px 20px;
+    background-color: var(--clr-button);
+}
 
+.card img {
+    border-radius: 5px 5px 0 0;
+  }
+  
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
+}
+  
+/* Add some padding inside the card container */
+.caption {
+    font-size: 1em;
+    font-family: var(--ff-title);
+    padding: 2px 16px;
+    text-align: center;
+    color: var(--clr-white);
+}
+
+#levelCard-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 /*
 =================================
 Media Queries
