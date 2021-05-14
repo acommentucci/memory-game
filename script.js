@@ -1,14 +1,14 @@
 // Get the modal
-var howToModal = document.getElementById("how-to-modal");
-var startModal = document.getElementById("start-modal");
+let howToModal = document.getElementById("how-to-modal");
+let startModal = document.getElementById("start-modal");
 
 // Get the button that opens the modal
-var howToBtn = document.getElementById("button-how-to");
-var startBtn = document.getElementById("button-start");
+let howToBtn = document.getElementById("button-how-to");
+let startBtn = document.getElementById("button-start");
 
 // Get the <span> element that closes the modal
-var quitHowTo = document.getElementsByClassName("closeHowTo")[0];
-var quitStart = document.getElementsByClassName("closeStart")[0];
+let quitHowTo = document.getElementsByClassName("closeHowTo")[0];
+let quitStart = document.getElementsByClassName("closeStart")[0];
 
 // When the user clicks the button, open the modal 
 howToBtn.onclick = function() {
