@@ -202,7 +202,7 @@ Modal
 =================================
 */
 .modal{
-    /* display: none; */
+    display: none;
     position: fixed;
     z-index: 1;
     padding-top: 100px;
@@ -240,7 +240,7 @@ Modal
     to {top:0; opacity:1}
   }
 
-#start-modal{
+#start-modal .modal-container{
     width: 50%;
 }
 /* The Close Button */
