@@ -14,8 +14,32 @@
         <h2>memory game</h2>
     </div>
     <div class="button-container">
-        <a href="#">How to play</a>
-        <a href="#">Start</a>
+        <a id="button-how-to" href="#">How to play</a>
+        <a id="button-start" href="#">Start</a>
+    </div>
+    <div id="how-to-modal" class="modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <i class="fas fa-times close"></i>
+                <h3>How to play</h3>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <li>Click on "Start".</li>
+                    <li>Select the difficulty level you prefer:
+                        <ul>
+                            <li><span>Morty - Easy - 12 cards</span></li>
+                            <li><span>Beth - Medium - 16 cards</span></li>
+                            <li><span>Rick - Hard - 20 cards</span></li>
+                        </ul>
+                        Only hard level scores will be considered for the leader board.
+                    </li>
+                    <li>When all pairs of cards are resolved, the game ends.</li>
+                    <li>If your time is among the best you will be asked to write your name to enter the ranking.</li>
+                    <p><span>Warning: It is not advisable to travel through dimensions to restart the game.</span></p>
+                </ol>
+            </div>
+        </div>
     </div>
     <div class="board-container">
 	    <div class="leaderboard">
