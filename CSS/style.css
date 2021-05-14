@@ -269,9 +269,6 @@ Modal
     padding: 2px 16px;
 }
 
-.modal-container h4{
-    font-size: 1.5rem;
-}
 .modal-container ul{
     list-style: none;
     text-align: center;
@@ -310,7 +307,7 @@ Modal
   
 /* Add some padding inside the card container */
 .caption {
-    font-size: 1em;
+    font-size: 1.5rem;
     font-family: var(--ff-title);
     padding: 2px 16px;
     text-align: center;
@@ -331,7 +328,12 @@ Media Queries
     .button-container{
       width: 66.66%;
     }
-  }
+}
+@media screen and (max-width: 1050px) {
+    .caption{
+        font-size: 0.75rem;
+    }
+}
 @media screen and (max-width: 769px){
     body {
         background-image: url("../assets/img/background_image_mobile.jpg");
@@ -354,8 +356,11 @@ Media Queries
         align-items: center;
         justify-content: center;
     }
+    .modal-container{
+        width: 75%;
+    }
   }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 530px) {
     h2{
         font-size: 3.5rem;
     }
@@ -374,6 +379,19 @@ Media Queries
 
     .board-container {
         width: 90%;
+    }
+    .modal-container{
+        font-size: 0.75rem;
+        width: 90%;
+    }
+    .card{
+        width: 50%;
+    }
+    .caption{
+        font-size: 1.5rem;
+    }
+    #start-modal p{
+        font-size: 1.2rem;
     }
 }
 @media screen and (max-width: 440px){
