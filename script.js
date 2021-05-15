@@ -34,4 +34,108 @@ window.onclick = function(event) {
   if (event.target == startModal) {
       startModal.style.display = "none";
     }
+  if (event.target == gameModal) {
+        gameModal.style.display = "none";
+      }
 }
+
+
+//game 
+let gameModal = document.getElementById("game-modal");
+
+//choose level
+let easy = document.getElementById("Jerry");
+
+// When the user clicks the button, open the modal 
+easy.onclick = function() {
+    gameModal.style.display = "block";
+    startModal.style.display = "none";
+  }
+
+//cards
+const cardArray = [
+    {
+        name: 'Arthricia',
+        img: 'assets\img\Cards\Arthricia_end_HQ.jpg'
+    },
+    {
+        name: 'Arthricia',
+        img: 'assets\img\Cards\Arthricia_end_HQ.jpg'
+    },
+    {
+        name: 'Birdperson',
+        img: 'assets\img\Cards\Birdperson_level_hard.jpg'
+    },
+    {
+        name: 'Birdperson',
+        img: 'assets\img\Cards\Birdperson_level_hard.jpg'
+    },
+    {
+        name: 'Butterbot',
+        img: 'assets\img\Cards\Butter_Robot_Picture.jpg'
+    },
+    {
+        name: 'Butterbot',
+        img: 'assets\img\Cards\Butter_Robot_Picture.jpg'
+    },
+    {
+        name: 'Dr.Wong',
+        img: 'assets\img\Cards\Dr._Wong.jpg'
+    },
+    {
+        name: 'Dr.Wong',
+        img: 'assets\img\Cards\Dr._Wong.jpg'
+    },
+    {
+        name: 'Tammy',
+        img: 'assets\img\Cards\Fed_Tammy.jpg'
+    },
+    {
+        name: 'Tammy',
+        img: 'assets\img\Cards\Fed_Tammy.jpg'
+    },
+    {
+        name: 'Glaxo',
+        img: 'assets\img\Cards\Glaxo.jpg'
+    },
+    {
+        name: 'Glaxo',
+        img: 'assets\img\Cards\Glaxo.jpg'
+    },
+    {
+        name: 'Grom',
+        img: 'assets\img\Cards\Gromflomite_3.jpg'
+
+    },
+    {
+        name: 'Grom',
+        img: 'assets\img\Cards\Gromflomite_3.jpg'
+
+    },
+    {
+        name: 'Jaguar',
+        img: 'assets\img\Cards\Jaguar1.jpg'
+    },
+    {
+        name: 'Jaguar',
+        img: 'assets\img\Cards\Jaguar1.jpg'
+    },
+    {
+        name: 'Jessica',
+        img: 'assets\img\Cards\Jessica.jpg'
+    },
+    {
+        name: 'Jessica',
+        img: 'assets\img\Cards\Jessica.jpg'
+    },
+    {
+        name: 'Linconer',
+        img: 'assets\img\Cards\Jessica.jpg'
+    },
+    {
+        name: 'Linconer',
+        img: 'assets\img\Cards\Jessica.jpg'
+    },
+
+
+]

@@ -319,6 +319,14 @@ Modal
     justify-content: center;
     flex-wrap: wrap;
 }
+
+/*game*/
+
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+    height: 720px;
+}
 /*
 =================================
 Media Queries
