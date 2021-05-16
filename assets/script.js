@@ -162,8 +162,8 @@ function checkForMatch() {
     const optionOneId = cardsChosenId[0]
     const optionTwoId = cardsChosenId[1]
     if (cardsChosen[0] === cardsChosen[1]) {
-        cards[optionOneId].style.visibility('hidden')
-        cards[optionTwoId].style.visibility('hidden')
+        cards[optionOneId].style.visibility ='hidden'
+        cards[optionTwoId].style.visibility = 'hidden'
         cardsWon.push(cardsChosen)
     } else {
         cards[optionOneId].setAttribute('src', './assets/img/Cards/back_face_cards.jpg')
