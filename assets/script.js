@@ -44,7 +44,20 @@ window.onclick = function(event) {
 let gameModal = document.getElementById("game-modal");
 
 //choose level
-let easy = document.getElementById("Jerry");
+let easy = document.getElementById("easy");
+let medium = document.getElementById("medium");
+let hard = document.getElementById("hard");
+easy.onclick = easyGame()
+medium.onclick = "mediumGame()"
+hard.onclick = "hardGame()"
+
+function easyGame(){
+    gameModal.style.display = "block";
+    startModal.style.display = "none";
+    easyCardArray = cardArray.slice(0, 9)
+    createBoard(easyCardArray)
+}
+
 
 // When the user clicks the button, open the modal 
 easy.onclick = function() {
@@ -53,7 +66,7 @@ easy.onclick = function() {
   }
 
 //cards
-const cardArray = [
+let cardArray = [
     {
         name: 'Arthricia',
         img: './assets/img/Cards/Arthricia_end_HQ.jpg',
@@ -144,8 +157,8 @@ let cardsChosenId = []
 let cardsWon = []
 
 //create the board
-function createBoard() {
-    for (let i = 0; i < cardArray.length; i++) {
+function createBoard(array) {
+    for (let i = 0; i < array.length; i++) {
         let card = document.createElement('img')
         card.setAttribute('src', './assets/img/Cards/back_face_cards.jpg')
         card.setAttribute('data-id', i)
@@ -158,7 +171,6 @@ function createBoard() {
 // //check for match
 function checkForMatch() {
     let cards = document.getElementsByClassName('cards')
-    console.log(cards)
     const optionOneId = cardsChosenId[0]
     const optionTwoId = cardsChosenId[1]
     if (cardsChosen[0] === cardsChosen[1]) {
@@ -168,11 +180,11 @@ function checkForMatch() {
     } else {
         cards[optionOneId].setAttribute('src', './assets/img/Cards/back_face_cards.jpg')
         cards[optionTwoId].setAttribute('src', './assets/img/Cards/back_face_cards.jpg')
-        }
+    }
     cardsChosen = []
     cardsChosenId = []
     if (cardsWon.length === cardArray.lenght/2) {
-        alert('Congratulations!')
+        console.log('Congratulations!')
     }    
 }
 // flipcard
@@ -183,13 +195,8 @@ function flipCard() {
     this.setAttribute('src', cardArray[cardId].img)
     if (cardsChosen.length === 2) {
         setTimeout(checkForMatch, 1000)
-    console.log(cardsChosen)
-    console.log(cardsChosenId)
-    console.log(cardsChosen.length)
     }
 }
 
 
 
-
-createBoard()

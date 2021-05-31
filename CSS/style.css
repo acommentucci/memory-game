@@ -281,7 +281,7 @@ Modal
     text-align: center;
 }
 
-.card {
+.level-card {
     /* Add shadows to create the "card" effect */
     width: 20%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
@@ -292,16 +292,16 @@ Modal
     transition-duration: 0.4s;
 }
 
-.card:hover{
+.level-card:hover{
     transform: scale(1.1);
 }
 
-.card img {
+.level-card img {
     border-radius: 5px 5px 0 0;
   }
   
 /* On mouse-over, add a deeper shadow */
-.card:hover {
+.level-card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
 }
   
@@ -314,7 +314,7 @@ Modal
     color: var(--clr-white);
 }
 
-#levelCard-container{
+#level-cards-container{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -392,7 +392,7 @@ Media Queries
         font-size: 0.75rem;
         width: 90%;
     }
-    .card{
+    .level-card{
         width: 50%;
     }
     .caption{
