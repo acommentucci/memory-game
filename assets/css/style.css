@@ -42,7 +42,7 @@ Global CSS
 
 body {
     height: 100vh;
-    background-image: url("../assets/img/background_image_desktop_lighter.jpg");
+    background-image: url("/assets/img/background_image_desktop_lighter.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     font-family: var(--ff-title);
@@ -344,7 +344,7 @@ Media Queries
 }
 @media screen and (max-width: 769px){
     body {
-        background-image: url("../assets/img/background_image_mobile.jpg");
+        background-image: url("/assets/img/background_image_mobile.jpg");
     }
     h1{
         display: none;

@@ -81,6 +81,13 @@ let cardArray = [
         img: './assets/img/Cards/Linconer.jpg',
     },
 ]
+
+const grid = document.querySelector('.grid')
+let cardsChosen = []
+let cardsChosenId = []
+let cardsWon = []
+
+
 // Get the modal
 let howToModal = document.getElementById("how-to-modal");
 let startModal = document.getElementById("start-modal");
@@ -93,34 +100,6 @@ let startBtn = document.getElementById("button-start");
 let quitHowTo = document.getElementsByClassName("closeHowTo")[0];
 let quitStart = document.getElementsByClassName("closeStart")[0];
 
-// When the user clicks the button, open the modal 
-howToBtn.onclick = function() {
-  howToModal.style.display = "block";
-}
-startBtn.onclick = function() {
-    startModal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-quitHowTo.onclick = function() {
-    howToModal.style.display = "none";
-}
-quitStart.onclick = function() {
-    startModal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == howToModal) {
-    howToModal.style.display = "none";
-  }
-  if (event.target == startModal) {
-      startModal.style.display = "none";
-    }
-  if (event.target == gameModal) {
-        gameModal.style.display = "none";
-      }
-}
 
 
 //game 
@@ -130,31 +109,39 @@ let gameModal = document.getElementById("game-modal");
 let easy = document.getElementById("easy");
 let medium = document.getElementById("medium");
 let hard = document.getElementById("hard");
-easy.onclick = easyGame()
-medium.onclick = "mediumGame()"
-hard.onclick = "hardGame()"
+
+let easyCardArray = cardArray.slice(8);
+let mediumCardArray = cardArray.slice(4);
+
+
+
+
+
+function chooseLevel(){
+    easy.addEventListener("click", easyGame);
+    medium.addEventListener("click", mediumGame)
+    hard.addEventListener("click", hardGame)
+}
 
 function easyGame(){
     gameModal.style.display = "block";
     startModal.style.display = "none";
-    easyCardArray = cardArray.slice(0, 9)
+    cardArray.sort(() => 0.5 - Math.random())
     createBoard(easyCardArray)
 }
 
-
-// When the user clicks the button, open the modal 
-easy.onclick = function() {
+function mediumGame(){
     gameModal.style.display = "block";
     startModal.style.display = "none";
-  }
+    cardArray.sort(() => 0.5 - Math.random())
+    createBoard(mediumCardArray)
+}
 
-
-cardArray.sort(() => 0.5 - Math.random())
-
-const grid = document.querySelector('.grid')
-let cardsChosen = []
-let cardsChosenId = []
-let cardsWon = []
+function hardGame(){
+    gameModal.style.display = "block";
+    startModal.style.display = "none";
+    createBoard(cardArray)
+}
 
 //create the board
 function createBoard(array) {
@@ -163,6 +150,7 @@ function createBoard(array) {
         card.setAttribute('src', './assets/img/Cards/back_face_cards.jpg')
         card.setAttribute('data-id', i)
         card.setAttribute('class', 'cards')
+        card.style.margin = '3px'
         card.addEventListener('click', flipCard)
         grid.appendChild(card)
     }
@@ -194,9 +182,50 @@ function flipCard() {
     cardsChosenId.push(cardId)
     this.setAttribute('src', cardArray[cardId].img)
     if (cardsChosen.length === 2) {
-        setTimeout(checkForMatch, 1000)
+        setTimeout(checkForMatch, 500)
     }
+}
+
+//reset game
+function resetGame() {
+    chooseLevel()
 }
 
 
 
+
+// When the user clicks the button, open the modal 
+howToBtn.onclick = function() {
+    howToModal.style.display = "block";
+  }
+  startBtn.onclick = function() {
+      startModal.style.display = "block";
+  }
+  
+// When the user clicks on <span> (x), close the modal
+quitHowTo.onclick = function() {
+    howToModal.style.display = "none";
+}
+quitStart.onclick = function() {
+    startModal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == howToModal) {
+    howToModal.style.display = "none";
+    resetGame()
+  }
+  if (event.target == startModal) {
+      startModal.style.display = "none";
+      resetGame()
+    }
+  if (event.target == gameModal) {
+        gameModal.style.display = "none";
+        resetGame()
+      }
+}
+
+
+chooseLevel()
+cardArray.sort(() => 0.5 - Math.random())
