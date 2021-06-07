@@ -84,9 +84,8 @@ let cardArray = [
 
 const grid = document.querySelector('.grid')
 let cardsChosen = []
-let cardsChosenId = []
 let cardsWon = []
-
+let board = []
 
 // Get the modal
 let howToModal = document.getElementById("how-to-modal");
@@ -110,41 +109,41 @@ let easy = document.getElementById("easy");
 let medium = document.getElementById("medium");
 let hard = document.getElementById("hard");
 
-let easyCardArray = cardArray.slice(8);
-let mediumCardArray = cardArray.slice(4);
 
 
 
-
-
-function chooseLevel(){
+function chooseLevel() {
     easy.addEventListener("click", easyGame);
     medium.addEventListener("click", mediumGame)
     hard.addEventListener("click", hardGame)
 }
 
-function easyGame(){
-    gameModal.style.display = "block";
-    startModal.style.display = "none";
-    cardArray.sort(() => 0.5 - Math.random())
-    createBoard(easyCardArray)
+function easyGame() {
+
+    createLevelBoard(8)
 }
 
-function mediumGame(){
-    gameModal.style.display = "block";
-    startModal.style.display = "none";
-    cardArray.sort(() => 0.5 - Math.random())
-    createBoard(mediumCardArray)
+function mediumGame() {
+    createLevelBoard(4)
 }
 
-function hardGame(){
+function hardGame() {
+    createLevelBoard(0)
+}
+
+function createLevelBoard(size) {
+    cardsChosen = []
+    cardsWon = []
+    board = cardArray.slice(size)
     gameModal.style.display = "block";
     startModal.style.display = "none";
-    createBoard(cardArray)
+    board.sort(() => 0.5 - Math.random())
+    createBoard(board)
 }
 
 //create the board
 function createBoard(array) {
+    grid.innerHTML = ""
     for (let i = 0; i < array.length; i++) {
         let card = document.createElement('img')
         card.setAttribute('src', './assets/img/Cards/back_face_cards.jpg')
@@ -158,31 +157,42 @@ function createBoard(array) {
 
 // //check for match
 function checkForMatch() {
-    let cards = document.getElementsByClassName('cards')
-    const optionOneId = cardsChosenId[0]
-    const optionTwoId = cardsChosenId[1]
-    if (cardsChosen[0] === cardsChosen[1]) {
-        cards[optionOneId].style.visibility ='hidden'
-        cards[optionTwoId].style.visibility = 'hidden'
+    let firstCard = cardsChosen[0]
+    let secondCard = cardsChosen[1]
+
+    if (firstCard.arrayElement.name === secondCard.arrayElement.name) {
+        firstCard.element.style.visibility = 'hidden'
+        secondCard.element.style.visibility = 'hidden'
         cardsWon.push(cardsChosen)
+
+        let idx = board.findIndex((element) => element == firstCard.arrayElement)
+
+        delete board[idx]
+
+        idx = board.findIndex((element) => element == secondCard.arrayElement)
+        delete board[idx]
+
     } else {
-        cards[optionOneId].setAttribute('src', './assets/img/Cards/back_face_cards.jpg')
-        cards[optionTwoId].setAttribute('src', './assets/img/Cards/back_face_cards.jpg')
+        firstCard.element.setAttribute('src', './assets/img/Cards/back_face_cards.jpg')
+        secondCard.element.setAttribute('src', './assets/img/Cards/back_face_cards.jpg')
     }
     cardsChosen = []
-    cardsChosenId = []
-    if (cardsWon.length === cardArray.lenght/2) {
-        console.log('Congratulations!')
-    }    
+    
+    if (new Set(board).size == 1) {
+        alert('Congratulations!')
+        gameModal.style.display = "none";
+        resetGame()
+    }
 }
 // flipcard
 function flipCard() {
     let cardId = this.getAttribute('data-id')
-    cardsChosen.push(cardArray[cardId].name)
-    cardsChosenId.push(cardId)
-    this.setAttribute('src', cardArray[cardId].img)
-    if (cardsChosen.length === 2) {
-        setTimeout(checkForMatch, 500)
+    if (this.getAttribute('src') == './assets/img/Cards/back_face_cards.jpg') {
+        cardsChosen.push({ element: this, arrayElement: board[cardId] })
+        this.setAttribute('src', board[cardId].img)
+        if (cardsChosen.length === 2) {
+            setTimeout(checkForMatch, 200)
+        }
     }
 }
 
@@ -195,37 +205,36 @@ function resetGame() {
 
 
 // When the user clicks the button, open the modal 
-howToBtn.onclick = function() {
+howToBtn.onclick = function () {
     howToModal.style.display = "block";
-  }
-  startBtn.onclick = function() {
-      startModal.style.display = "block";
-  }
-  
+}
+startBtn.onclick = function () {
+    startModal.style.display = "block";
+}
+
 // When the user clicks on <span> (x), close the modal
-quitHowTo.onclick = function() {
+quitHowTo.onclick = function () {
     howToModal.style.display = "none";
 }
-quitStart.onclick = function() {
+quitStart.onclick = function () {
     startModal.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == howToModal) {
-    howToModal.style.display = "none";
-    resetGame()
-  }
-  if (event.target == startModal) {
-      startModal.style.display = "none";
-      resetGame()
+window.onclick = function (event) {
+    if (event.target == howToModal) {
+        howToModal.style.display = "none";
+        resetGame()
     }
-  if (event.target == gameModal) {
+    if (event.target == startModal) {
+        startModal.style.display = "none";
+        resetGame()
+    }
+    if (event.target == gameModal) {
         gameModal.style.display = "none";
         resetGame()
-      }
+    }
 }
 
 
 chooseLevel()
-cardArray.sort(() => 0.5 - Math.random())
