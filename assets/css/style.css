@@ -1,8 +1,16 @@
 /*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+/*
 =================================
 Fonts
 =================================
 */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @font-face {
     font-family: 'get_schwiftyregular';
     src: url('fonts/get_schwifty-webfont.woff2') format('woff2'),
@@ -11,7 +19,7 @@ Fonts
     font-weight: normal;
     font-style: normal;
 }
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 
 /*
 =================================
@@ -37,7 +45,8 @@ Global CSS
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 body {
@@ -47,10 +56,19 @@ body {
     background-position: center top;
     background-size: cover;
     font-family: var(--ff-title);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: relative;
     background-color: var(--clr-button);
     letter-spacing: 2px;
@@ -85,11 +103,17 @@ h2{
     position: absolute;
     bottom: 5rem;
     width: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 .button-container a {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 300px;
     background-color: var(--clr-button);
@@ -98,12 +122,19 @@ h2{
     padding: 5px 10px;
     border-radius: 5px;
     margin: 0 20px 0 20px;;
-    box-shadow: 10px 10px 30px 5px #000;
+    -webkit-box-shadow: 10px 10px 30px 5px #000;;
+            box-shadow: 10px 10px 30px 5px #000;
     cursor: pointer;
-    transition-duration: 0.4s;
-    justify-content: center;
+    -webkit-transition-duration: 0.4s;
+         -o-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     text-align: center;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     font-family: var(--ff-paragraph);
     font-size: 1.3rem;
     letter-spacing: 2px;
@@ -113,7 +144,9 @@ h2{
 
 .button-container a:hover{
     background-color: var(--clr-darkerbutton);
-    transform: scale(1.1)
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1)
 }
 
 /*
@@ -127,7 +160,8 @@ Leader Board
 	height: auto;
 	border-radius: 10px;
     font-family: var(--ff-paragraph);
-	box-shadow:  10px 10px 30px 5px #000;
+	-webkit-box-shadow:  10px 10px 30px 5px #000;
+	        box-shadow:  10px 10px 30px 5px #000;
     position: absolute;
     top: 90%;
     overflow: hidden;
@@ -141,9 +175,15 @@ Leader Board
     color: var(--clr-white);
     letter-spacing: 10px;
     font-weight: 100;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .board-container .head i{
@@ -155,8 +195,12 @@ Leader Board
 }
 
 .board-container li{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     padding: 10px 0 10px 10px;
     font-size: 1.2rem;
 }
@@ -194,9 +238,16 @@ footer{
     position: absolute;
     bottom: -25%;
     text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 /*
@@ -226,7 +277,8 @@ Modal
     border: 5px solid var(--clr-purple);
     border-radius: 10px;
     width: 100%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
@@ -296,16 +348,23 @@ Modal
 .level-card {
     /* Add shadows to create the "card" effect */
     width: 50%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
     transition: 0.3s;
     border-radius: 5px;
     margin: 20px 20px;
     background-color: var(--clr-button);
-    transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s;
+         -o-transition-duration: 0.4s;
+            transition-duration: 0.4s;
 }
 
 .level-card:hover{
-    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
 }
 
 .level-card img {
@@ -314,7 +373,8 @@ Modal
   
 /* On mouse-over, add a deeper shadow */
 .level-card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
+    -webkit-box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
 }
   
 /* Add some padding inside the card container */
@@ -327,9 +387,14 @@ Modal
 }
 
 #level-cards-container{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 
 /*game*/
@@ -337,10 +402,16 @@ Modal
 .grid{
     background-color: var(--clr-white);
     border-radius: 1.5em;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: center;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	height: auto;
 	margin: 2rem 0 2rem 0;
 	padding: 0.5rem;
@@ -357,7 +428,8 @@ Modal
 
 .grid,
 .cards{
-    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    -webkit-box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+            box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
 }
 /* 
 =================================
@@ -411,7 +483,9 @@ Media Queries
     }
     .cards{
         margin: 5px;
-        align-self: stretch;
+        -ms-flex-item-align: stretch;
+            -ms-grid-row-align: stretch;
+            align-self: stretch;
     }
 
 }
