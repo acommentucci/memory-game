@@ -42,7 +42,7 @@ Global CSS
 
 body {
     height: 80vh;
-    background-image: url("./assets/img/background_image_mobile.jpg");
+    background-image: url("../img/background_image_mobile.jpg");
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -367,7 +367,7 @@ Media Queries
 @media screen and (min-width: 767px) {
     body {
         height: 80vh;
-        background-image: url("./assets/img/background_image_desktop_lighter.jpg");
+        background-image: url("../img/background_image_desktop_darker.jpg");
         background-repeat: no-repeat;
         background-position: center top;
         background-size: cover;
