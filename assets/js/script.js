@@ -98,11 +98,14 @@ let startBtn = document.getElementById("button-start");
 // Get the <span> element that closes the modal
 let quitHowTo = document.getElementsByClassName("closeHowTo")[0];
 let quitStart = document.getElementsByClassName("closeStart")[0];
+let quitGame = document.getElementsByClassName("closeGame")[0];
+let quitCongrats = document.getElementsByClassName("closeCongrats")[0];
 
 
 
 //game 
 let gameModal = document.getElementById("game-modal");
+let congratsModal = document.getElementById("congrats-modal");
 
 //choose level
 let easy = document.getElementById("easy");
@@ -135,7 +138,7 @@ function timer() {
 				seconds = 0;
 			}
 		// Update the timer in HTML with the time it takes the user to play the game
-		timeCounter.innerHTML = "<i class='fa fa-hourglass-start'></i>" + " Timer: " + minutes + " Mins " + seconds + " Secs" ;
+		timeCounter.innerHTML = minutes + " Mins " + seconds + " Secs" ;
 	}, 1000);
 }
 
@@ -232,8 +235,9 @@ function checkForMatch() {
     cardsChosen = []
     
     if (new Set(board).size == 1) {
-        alert('Congratulations!')
         gameModal.style.display = "none";
+        congratsModal.style.display = "initial";
+        document.getElementById("time-record").innerHTML = timeCounter.innerHTML;
         stopTime();
         resetEverything();
         resetGame();
@@ -271,12 +275,19 @@ startBtn.onclick = function () {
 // When the user clicks on <span> (x), close the modal
 quitHowTo.onclick = function () {
     howToModal.style.display = "none";
+    resetGame()
 }
 quitStart.onclick = function () {
     startModal.style.display = "none";
+    resetGame()
 }
-quitStart.onclick = function () {
-    startModal.style.display = "none";
+quitGame.onclick = function () {
+    gameModal.style.display = "none";
+    resetGame()
+}
+quitCongrats.onclick = function () {
+    congratsModal.style.display = "none";
+    resetGame()
 }
 
 // When the user clicks anywhere outside of the modal, close it
@@ -291,6 +302,10 @@ window.onclick = function (event) {
     }
     if (event.target == gameModal) {
         gameModal.style.display = "none";
+        resetGame()
+    }
+    if (event.target == congratsModal) {
+        congratsModal.style.display = "none";
         resetGame()
     }
 }

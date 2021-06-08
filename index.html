@@ -78,12 +78,26 @@
         </div>
     </div>
 
+    <!--"Congratulations" modal-->
+        <div  id="congrats-modal" class="modal">
+            <div class="modal-container">
+                <div class="modal-header">
+                    <i class="fas fa-times close closeCongrats"></i>
+                    <h3>Congratulations!</h3>
+                </div>
+                <div class="modal-body">
+                        <h4>You finished the game in <span id="time-record"></span></h4>
+                </div>
+            </div>
+        </div>
+
     <!--Game-->
     <div id="game-modal" class="modal">
         <div class="modal-container">
             <div class="modal-body">
                 <div class="timer-container">
-                    <span class="timer"><i class="fa fa-hourglass-start"></i><h4>Timer: 00:00</h4></span>
+                    <span class="timer"><h4></h4></span>
+                    <i class="fas fa-times close closeGame"></i>
                 <div class="grid">
                 </div>
             </div>

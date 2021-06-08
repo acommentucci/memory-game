@@ -261,6 +261,11 @@ Modal
     cursor: pointer;
   }
 
+#congrats-modal h3{
+    margin-top: 20px;
+    margin-bottom: 40px;
+    
+}
 .modal-header h3{
     text-align: center;
     font-family: var(--ff-title);
