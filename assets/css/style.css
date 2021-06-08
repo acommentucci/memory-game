@@ -42,7 +42,7 @@ Global CSS
 
 body {
     height: 80vh;
-    background-image: url("/assets/img/background_image_mobile.jpg");
+    background-image: url("./assets/img/background_image_mobile.jpg");
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -266,6 +266,10 @@ Modal
     margin-bottom: 40px;
     
 }
+.timer{
+    text-align: center;
+    font-size: 1.5rem;
+}
 .modal-header h3{
     text-align: center;
     font-family: var(--ff-title);
@@ -363,7 +367,7 @@ Media Queries
 @media screen and (min-width: 767px) {
     body {
         height: 80vh;
-        background-image: url("/assets/img/background_image_desktop_lighter.jpg");
+        background-image: url("./assets/img/background_image_desktop_lighter.jpg");
         background-repeat: no-repeat;
         background-position: center top;
         background-size: cover;

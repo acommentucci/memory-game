@@ -61,7 +61,10 @@ Background image change on table and smaller screen
 
 3 different difficult level to play
 
+Timer
+
 ## Features to implement
+ranking
 # Technologies
 # Testing
 # Project barrier and solutions
