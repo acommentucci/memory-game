@@ -51,11 +51,11 @@ Depending on your choice, three different panels will open with the home page re
 Once the player starts the game he will have a number of cards proportionate to the chosen difficulty level. A timer and an attempts counter will be visible.
 At the end of the game, a summary panel will be displayed your result.
 ## Skeleton
-[Desktop wireframes](assets\wireframes\memory_game_desktop_wireframes.pdf)
+[Desktop wireframes](./assets/wireframes/memory_game_desktop_wireframes.pdf)
 
-[Mobile wireframes](assets\wireframes\memory_game_mobile_wireframes.pdf)
+[Mobile wireframes](./assets/wireframes/memory_game_mobile_wireframes.pdf)
 ## Surface
-![color palette](assets\rick_and_morty_palette.png)
+![color palette](./assets/rick_and_morty_palette.png)
 The colors chosen for the project were selected from the cover image of the series and represent the colors of space science fiction with that pulpy and slightly hallucinatory taste typical of *Rick and Morty*.
 
 From [Free fonts vault](https://freefontsvault.com/) I was able to download the typical font from the series "Get Schwifty Font" and use it in my project along with the more user friendly "Roboto".
@@ -121,6 +121,11 @@ Ran CSS through [Autoprefixer](https://autoprefixer.github.io/) and copied new C
 ## Grammar and spelling
 ran the readme.md and the website content through [online-spellcheck](https://www.online-spellcheck.com/).
 ## Lighthouse
+The Lighthouse Test  gave the following results:
+-  Performance: 98
+-  Accessibility: 93
+-  Best Practices: 100
+-  SEO: 89
 # Project barrier and solutions
 Where to write the cards - One of the first problems I encountered in planning the project was whether to insert the memory game cards in the Html code or in the Javascript. I looked at several tutorials and they were shown both ways. So I asked the Stack Overflow community and decided to put my cards in the Javascript document as it seemed to be the most consistent and clean choice.
 
