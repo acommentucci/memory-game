@@ -61,7 +61,6 @@ Background image change on table and smaller screen
 
 3 different difficult level to play
 
-Leader Board with the best 5 players
 ## Features to implement
 # Technologies
 # Testing
