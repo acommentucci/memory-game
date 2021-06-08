@@ -108,7 +108,7 @@ h2{
     text-align: center;
     align-items: center;
     font-family: var(--ff-paragraph);
-    font-size: 1rem;
+    font-size: 1.3rem;
     letter-spacing: 2px;
     line-height: 1.5;
     text-decoration: none;
@@ -337,7 +337,7 @@ Modal
 	justify-content: space-around;
 	align-items: center;
 	height: auto;
-	margin-bottom: 6rem;
+	margin: 2rem 0 2rem 0;
 	padding: 0.5rem;
 	width: auto;
 }
@@ -345,6 +345,9 @@ Modal
 .cards{
     cursor: pointer;
     border-radius: 0.5em;
+    border: solid 1px var(--clr-purple);
+    width: 25%;
+
 }
 
 .grid,

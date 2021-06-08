@@ -149,7 +149,6 @@ function createBoard(array) {
         card.setAttribute('src', './assets/img/Cards/back_face_cards.jpg')
         card.setAttribute('data-id', i)
         card.setAttribute('class', 'cards')
-        card.style.margin = '3px'
         card.addEventListener('click', flipCard)
         grid.appendChild(card)
     }
