@@ -367,7 +367,7 @@ Media Queries
 @media screen and (min-width: 767px) {
     body {
         height: 80vh;
-        background-image: url("../img/background_image_desktop_darker.jpg");
+        background-image: url("../img/background_image_desktop_lighter.jpg");
         background-repeat: no-repeat;
         background-position: center top;
         background-size: cover;
