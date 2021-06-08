@@ -74,6 +74,10 @@ Selecting the n child of an element :nth-child()
 
 After built two different modal I had to make it work with javascript. Close icon working for both modals. Gave the close button two different Ids.
 
+reset game
+
+creating board
+
 # Deployment
 # Credits
 All images were taken from [Rick and Morty Fandom website](https://rickandmorty.fandom.com/wiki/Rickipedia), except for the background photo that is from [Wallpaper Cave](https://wallpapercave.com/w/wp5015262)
