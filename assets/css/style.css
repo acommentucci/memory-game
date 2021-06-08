@@ -401,8 +401,8 @@ Media Queries
         width: 15%;
     }
     .cards{
-        width: 100px;
-        margin-bottom: 2px;
+        margin: 5px;
+        align-self: stretch;
     }
 
 }

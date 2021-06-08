@@ -110,6 +110,57 @@ let medium = document.getElementById("medium");
 let hard = document.getElementById("hard");
 
 
+// Get the span tag for the timer.
+const timeCounter = document.querySelector(".timer");
+// To use this variable to stop the time started in timer
+let time;
+// Create variables for time count, start all at zero
+let minutes = 0;
+let seconds = 0;
+// For use in the click card event listener
+let timeStart = false;
+
+/*
+Update the timer in the HTML for minutes and seconds
+This timer() function is invoked in the event listener
+on the first card click
+Used: https://www.w3schools.com/js/js_timing.asp
+*/
+function timer() {
+	// Update the count every 1 second
+	time = setInterval(function() {
+		seconds++;
+			if (seconds === 60) {
+				minutes++;
+				seconds = 0;
+			}
+		// Update the timer in HTML with the time it takes the user to play the game
+		timeCounter.innerHTML = "<i class='fa fa-hourglass-start'></i>" + " Timer: " + minutes + " Mins " + seconds + " Secs" ;
+	}, 1000);
+}
+
+/*
+Stop the timer once the user has matched
+all 16 cards, total of 8 pairs
+Used: https://www.w3schools.com/js/js_timing.asp
+*/
+function stopTime() {
+	clearInterval(time);
+}
+
+/*
+Reset all global variables and the content of HTML elements
+timer, stars, moves, and the moves and timer inner HTML
+*/
+function resetEverything() {
+	// Stop time, reset the minutes and seconds update the time inner HTML
+	stopTime();
+	timeStart = false;
+	seconds = 0;
+	minutes = 0;
+	timeCounter.innerHTML = "<i class='fa fa-hourglass-start'></i>" + " Timer: 00:00";
+
+}
 
 
 function chooseLevel() {
@@ -119,7 +170,6 @@ function chooseLevel() {
 }
 
 function easyGame() {
-
     createLevelBoard(8)
 }
 
@@ -152,6 +202,10 @@ function createBoard(array) {
         card.addEventListener('click', flipCard)
         grid.appendChild(card)
     }
+    if (timeStart === false) {
+        timeStart = true; 
+        timer();
+    }
 }
 
 // //check for match
@@ -180,7 +234,9 @@ function checkForMatch() {
     if (new Set(board).size == 1) {
         alert('Congratulations!')
         gameModal.style.display = "none";
-        resetGame()
+        stopTime();
+        resetEverything();
+        resetGame();
     }
 }
 // flipcard
@@ -190,7 +246,7 @@ function flipCard() {
         cardsChosen.push({ element: this, arrayElement: board[cardId] })
         this.setAttribute('src', board[cardId].img)
         if (cardsChosen.length === 2) {
-            setTimeout(checkForMatch, 200)
+            setTimeout(checkForMatch, 1000)
         }
     }
 }
@@ -198,6 +254,7 @@ function flipCard() {
 //reset game
 function resetGame() {
     chooseLevel()
+    resetEverything();
 }
 
 
@@ -214,6 +271,9 @@ startBtn.onclick = function () {
 // When the user clicks on <span> (x), close the modal
 quitHowTo.onclick = function () {
     howToModal.style.display = "none";
+}
+quitStart.onclick = function () {
+    startModal.style.display = "none";
 }
 quitStart.onclick = function () {
     startModal.style.display = "none";
